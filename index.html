@@ -49,7 +49,7 @@
         }
 
         .nav-container {
-            max-width: 1200px; /* Diperlebar sedikit agar ruang lebih luas */
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -200,7 +200,7 @@
         /* General Section Layout */
         section {
             padding: 5rem 2rem;
-            max-width: 1200px; /* Diperlebar agar kontainer sertifikat makin luas ke samping */
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -396,10 +396,9 @@
             font-weight: 600;
         }
 
-        /* TETAP 3 KOLOM KE SAMPING, namun diperlebar kartu & preview-nya */
         .cert-pdf-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Memaksa pas tepat 3 kolom ke samping */
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.8rem;
             margin-bottom: 3rem;
         }
@@ -422,7 +421,6 @@
             border-color: rgba(255, 250, 141, 0.5);
         }
 
-        /* Kontainer preview diperlebar ke samping */
         .cert-pdf-preview {
             width: 100%;
             height: 200px; 
@@ -468,7 +466,6 @@
             font-size: 0.85rem;
         }
 
-        /* Slider PDF Coursera */
         .coursera-slider-wrapper {
             background: rgba(30, 41, 59, 0.6);
             border: 1px solid rgba(111, 230, 252, 0.2);
@@ -585,10 +582,9 @@
             margin-top: 3rem;
         }
 
-        /* Responsive Design (Menyesuaikan untuk layar HP/Tablet agar tetap rapi) */
         @media (max-width: 1024px) {
             .cert-pdf-grid {
-                grid-template-columns: 1fr; /* Di layar kecil berubah jadi 1 kolom ke bawah */
+                grid-template-columns: 1fr;
             }
         }
 
@@ -745,9 +741,7 @@
             <p>Pencapaian, kompetisi internasional/nasional, serta sertifikasi keahlian.</p>
         </div>
         
-        <!-- 3 Baris ke Samping (Grid) untuk Sertifikat Utama -->
         <div class="cert-pdf-grid">
-            <!-- 1. TOEIC -->
             <div class="cert-pdf-card">
                 <div class="cert-pdf-preview">
                     <embed src="Sertifikat/Sertifikat TOEIC_ZakariaZidanZamroni.pdf" type="application/pdf">
@@ -761,7 +755,6 @@
                 </div>
             </div>
 
-            <!-- 2. Gayatama -->
             <div class="cert-pdf-card">
                 <div class="cert-pdf-preview">
                     <embed src="Sertifikat/Sertifikat_Juara 1 Gayatama 4.pdf" type="application/pdf">
@@ -775,7 +768,6 @@
                 </div>
             </div>
 
-            <!-- 3. OLIVIA IX -->
             <div class="cert-pdf-card">
                 <div class="cert-pdf-preview">
                     <embed src="Sertifikat/Sertifikat_Juara 3 OLIVIA IX.pdf" type="application/pdf">
@@ -792,7 +784,7 @@
 
         <!-- Slider PDF Coursera -->
         <div class="coursera-slider-wrapper">
-            <h3><i class="fa-solid fa-graduation-cap"></i> Dokumen Sertifikat Coursera (PDF)</h3>
+            <h3><i class="fa-solid fa-graduation-cap"></i> Dokumen Sertifikat Coursera</h3>
             <div class="slider-container">
                 <div class="slider-pdf-box">
                     <embed id="courseraPdfEmbed" src="Sertifikat/Sertifikat Advanced MySQL Topics.pdf" type="application/pdf">
@@ -817,13 +809,8 @@
             <h2>Mari Terhubung Bersama Saya!</h2>
             <p>Saya terbuka untuk kesempatan kerja penuh waktu, magang, maupun kolaborasi proyek teknologi inovatif lainnya.</p>
             <div class="contact-links">
-                <!-- Email dengan subjek dan isi pesan otomatis -->
-                <a href="mailto:zakariazidancareer@gmail.com?subject=Halo%20Zakaria&body=Halo%20Zakaria,%20saya%20tertarik%20untuk%20berkolaborasi%20dengan%20Anda."><i class="fa-solid fa-envelope"></i> zakariazidancareer@gmail.com</a>
-                
-                <!-- WhatsApp langsung mengirim pesan -->
-                <a href="https://wa.me/6287885007013?text=Halo%20Zakaria,%20saya%20melihat%20portofolio%20Anda%20dan%20tertarik%20untuk%20menghubungi%20Anda." target="_blank"><i class="fa-solid fa-phone"></i> +62 878 8500 7013</a>
-                
-                <!-- LinkedIn langsung ke profil Anda -->
+                <a href="mailto:zakariazidancareer@gmail.com?subject=Halo%20Zidan&body=Halo%20Zakaria,%20saya%20tertarik%20untuk%20berkolaborasi%20dengan%20Anda."><i class="fa-solid fa-envelope"></i> zakariazidancareer@gmail.com</a>
+                <a href="https://wa.me/6287885007013?text=Halo%20Zidan,%20saya%20melihat%20portofolio%20Anda%20dan%20tertarik%20untuk%20menghubungi%20Anda." target="_blank"><i class="fa-solid fa-phone"></i> +62 878 8500 7013</a>
                 <a href="https://www.linkedin.com/in/zakariazidan" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
             </div>
         </div>
@@ -836,7 +823,6 @@
 
     <!-- Script JavaScript -->
     <script>
-        // Script Slider Proyek Unggulan
         const projectData = [
             {
                 title: "1. VR Candi Borobudur",
@@ -891,8 +877,6 @@
             updateProjectSlider();
         }
 
-        // Script Slider PDF Coursera
-        
         const courseraData = [
             { title: "1. Sertifikat Advanced MySQL Topics", pdf: "Sertifikat/Sertifikat Advanced MySQL Topics.pdf" },
             { title: "2. Sertifikat Agile with Atlassian Jira", pdf: "Sertifikat/Sertifikat Agile with Atlassian Jira.pdf" },
