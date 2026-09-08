@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zakaria Zidan Zamroni - Portofolio</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #6FE6FC;
+            --secondary: #FFFA8D;
+            --white: #FFFFFF;
+            --dark: #1E293B;
+            --gray: #64748B;
+            --light-bg: #0f172a; 
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header & Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px; /* Diperlebar sedikit agar ruang lebih luas */
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .logo span {
+            background: var(--primary);
+            color: var(--dark);
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 10rem 2rem 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
+            min-height: 90vh;
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .hero-content h1 span {
+            background: linear-gradient(135deg, var(--primary), #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--secondary);
+            color: #1e293b;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 10px rgba(255, 250, 141, 0.2);
+        }
+
+        .hero-content p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--dark);
+        }
+
+        .btn-primary:hover {
+            background: #38bdf8;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .hero-img-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-img-box {
+            width: 320px;
+            height: 380px;
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(111, 230, 252, 0.15);
+            border: 3px solid rgba(111, 230, 252, 0.3);
+            background: var(--card-bg);
+        }
+
+        .hero-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            object-position: center;
+            display: block;
+        }
+
+        /* General Section Layout */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px; /* Diperlebar agar kontainer sertifikat makin luas ke samping */
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            border-top: 4px solid var(--primary);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(111, 230, 252, 0.3);
+        }
+
+        .skill-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            color: var(--white);
+        }
+
+        .skill-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Experience Box */
+        .experience-container {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 4rem 2rem;
+            margin-bottom: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .experience-card {
+            max-width: 900px; 
+            margin: 0 auto; 
+            background: rgba(15, 23, 42, 0.6); 
+            padding: 2.5rem; 
+            border-radius: 20px; 
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Large Project Slider Styling */
+        .project-slider-wrapper {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(111, 230, 252, 0.2);
+            border-radius: 24px;
+            padding: 2.5rem;
+            max-width: 950px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+
+        .project-slider-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .project-img-display-box {
+            width: 100%;
+            height: 520px;
+            background: #0f172a;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid rgba(111, 230, 252, 0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .project-img-display-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .project-img-display-box img:hover {
+            transform: scale(1.02);
+        }
+
+        .project-details-display {
+            width: 100%;
+            max-width: 850px;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: left;
+        }
+
+        .project-details-display h3 {
+            font-size: 1.4rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-details-display p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(111, 230, 252, 0.1);
+            color: var(--primary);
+            border: 1px solid rgba(111, 230, 252, 0.2);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .slider-btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+
+        .slider-btn {
+            background: var(--primary);
+            color: var(--dark);
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .slider-btn:hover {
+            background: #38bdf8;
+            transform: scale(1.05);
+        }
+
+        .slider-indicator {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* TETAP 3 KOLOM KE SAMPING, namun diperlebar kartu & preview-nya */
+        .cert-pdf-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Memaksa pas tepat 3 kolom ke samping */
+            gap: 1.8rem;
+            margin-bottom: 3rem;
+        }
+
+        .cert-pdf-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 250, 141, 0.2);
+            border-radius: 20px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .cert-pdf-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 250, 141, 0.5);
+        }
+
+        /* Kontainer preview diperlebar ke samping */
+        .cert-pdf-preview {
+            width: 100%;
+            height: 200px; 
+            background: #0f172a;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cert-pdf-preview embed {
+            width: 100%;
+            height: 100%;
+        }
+
+        .cert-pdf-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .cert-pdf-icon {
+            background: rgba(255, 250, 141, 0.15);
+            color: var(--secondary);
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 250, 141, 0.3);
+        }
+
+        .cert-pdf-info h3 {
+            font-size: 1.05rem;
+            color: var(--white);
+            margin-bottom: 0.2rem;
+        }
+
+        .cert-pdf-info p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Slider PDF Coursera */
+        .coursera-slider-wrapper {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(111, 230, 252, 0.2);
+            border-radius: 20px;
+            padding: 2.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .coursera-slider-wrapper h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .slider-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .slider-pdf-box {
+            width: 100%;
+            max-width: 650px;
+            height: 360px;
+            background: #0f172a;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        .slider-pdf-box embed {
+            width: 100%;
+            height: 100%;
+        }
+
+        .slider-title-display {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white);
+            background: rgba(15, 23, 42, 0.8);
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            width: 100%;
+            max-width: 650px;
+        }
+
+        /* Contact Section */
+        .contact-box {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 3rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 5rem;
+        }
+
+        .contact-box h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .contact-box p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .contact-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .contact-links a:hover {
+            color: var(--primary);
+        }
+
+        .contact-links i {
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 3rem;
+        }
+
+        /* Responsive Design (Menyesuaikan untuk layar HP/Tablet agar tetap rapi) */
+        @media (max-width: 1024px) {
+            .cert-pdf-grid {
+                grid-template-columns: 1fr; /* Di layar kecil berubah jadi 1 kolom ke bawah */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 8rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .btn-group {
+                justify-content: center;
+            }
+
+            .hero-img-wrapper {
+                margin-top: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">My <span>Portfolio</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">Keahlian</a></li>
+                <li><a href="#experience">Pengalaman</a></li>
+                <li><a href="#projects">Proyek</a></li>
+                <li><a href="#certificates">Sertifikat</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">✨ Fresh Graduate D3 Teknik Informatika</span>
+            <h1>Halo, Saya <br><span>Zakaria Zidan Zamroni</span></h1>
+            <p>Lulusan D3 Teknik Informatika di Universitas Sebelas Maret yang berprestasi di tingkat internasional dan nasional. Berpengalaman dalam pengembangan Web, Mobile, dan Virtual Reality (VR).</p>
+            <div class="btn-group">
+                <a href="#projects" class="btn btn-primary">Lihat Proyek <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#contact" class="btn btn-secondary">Hubungi Saya</a>
+            </div>
+        </div>
+        <div class="hero-img-wrapper">
+            <div class="hero-img-box">
+                <img src="Foto/FOTO ZAKARIA ZIDAN.jpeg" alt="Zakaria Zidan Zamroni">
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang & Keahlian Section -->
+    <section id="about">
+        <div class="section-title">
+            <h2>Keahlian & Teknologi</h2>
+            <p>Bahasa pemrograman, tools, serta keahlian yang saya kuasai.</p>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fa-solid fa-code"></i>
+                <h3>Bahasa & Framework</h3>
+                <p>PHP (Laravel, CodeIgniter), JavaScript (Next.js, React), HTML/CSS, Python, C#.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-tools"></i>
+                <h3>Tools & Engine</h3>
+                <p>Git, Android Studio, Unity Engine, Godot, VS Code, Cisco, Figma.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-laptop-code"></i>
+                <h3>Hard Skills</h3>
+                <p>Pengembangan Full-Stack, Web PWA, Migrasi Sistem, Pengembangan Seluler & VR, Desain UI/UX.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-solid fa-user-check"></i>
+                <h3>Soft Skills</h3>
+                <p>Manajemen Waktu, Disiplin Kerja, Kolaborasi Tim, Fleksibilitas, Adaptabilitas Tinggi.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pengalaman Magang -->
+    <div style="padding: 0 2rem;">
+        <div id="experience" class="experience-container">
+            <div class="section-title" style="margin-bottom: 2rem;">
+                <h2>Pengalaman Kerja</h2>
+                <p>Jejak profesional dalam pengembangan sistem institusi.</p>
+            </div>
+            <div class="experience-card">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+                    <div>
+                        <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--white);">Magang Full-Stack Developer</h3>
+                        <p style="color: var(--primary); font-weight: 600;">PT. Garapan Indonesia Sukses</p>
+                    </div>
+                    <span class="tag" style="font-weight: 700;">Sept 2025 - Feb 2026</span>
+                </div>
+                <ul style="color: var(--text-muted); padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.6rem;">
+                    <li>Terpilih melalui rekomendasi dosen untuk bergabung dalam proyek pengembangan sistem institusi pendidikan.</li>
+                    <li>Berperan sebagai Full-Stack Developer dalam pengembangan ulang Website SIMTA (Sistem Informasi Tugas Akhir) untuk Universitas Sebelas Maret PSDKU Madiun.</li>
+                    <li>Melakukan migrasi dan modernisasi codebase sistem lama ke dalam bahasa pemrograman serta arsitektur yang lebih mutakhir.</li>
+                    <li>Mengimplementasikan penambahan fitur baru sesuai kebutuhan pengguna/dosen untuk meningkatkan performa, skalabilitas, dan keamanan sistem.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Proyek Section -->
+    <section id="projects">
+        <div class="section-title">
+            <h2>Proyek Unggulan</h2>
+            <p>Beberapa karya, tugas akhir, dan aplikasi yang pernah saya kembangkan.</p>
+        </div>
+        
+        <div class="project-slider-wrapper">
+            <div class="project-slider-container">
+                <div class="project-img-display-box">
+                    <img id="projectImg" src="Foto/FOTO VR.png" alt="Proyek Unggulan">
+                </div>
+                
+                <div class="project-details-display">
+                    <h3 id="projectTitle">1. VR Candi Borobudur</h3>
+                    <p id="projectDesc">Proyek Tugas Akhir mengembangkan aplikasi Virtual Reality (VR) Candi Borobudur dengan menambah bagian relief Gandavyuha untuk pelestarian budaya.</p>
+                    <div id="projectTags" class="tags">
+                        <span class="tag">Unity</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">VR</span>
+                    </div>
+                </div>
+
+                <div class="slider-btn-group">
+                    <button class="slider-btn" onclick="prevProject()"><i class="fa-solid fa-arrow-left"></i> Sebelumnya</button>
+                    <span id="projectIndicator" class="slider-indicator">1 / 3</span>
+                    <button class="slider-btn" onclick="nextProject()">Selanjutnya <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sertifikat & Penghargaan Section -->
+    <section id="certificates">
+        <div class="section-title">
+            <h2>Sertifikat & Penghargaan</h2>
+            <p>Pencapaian, kompetisi internasional/nasional, serta sertifikasi keahlian.</p>
+        </div>
+        
+        <!-- 3 Baris ke Samping (Grid) untuk Sertifikat Utama -->
+        <div class="cert-pdf-grid">
+            <!-- 1. TOEIC -->
+            <div class="cert-pdf-card">
+                <div class="cert-pdf-preview">
+                    <embed src="Sertifikat/Sertifikat TOEIC_ZakariaZidanZamroni.pdf" type="application/pdf">
+                </div>
+                <div class="cert-pdf-header">
+                    <div class="cert-pdf-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <div class="cert-pdf-info">
+                        <h3>Sertifikat TOEIC (Skor: 435)</h3>
+                        <p>ETS (2026)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Gayatama -->
+            <div class="cert-pdf-card">
+                <div class="cert-pdf-preview">
+                    <embed src="Sertifikat/Sertifikat_Juara 1 Gayatama 4.pdf" type="application/pdf">
+                </div>
+                <div class="cert-pdf-header">
+                    <div class="cert-pdf-icon"><i class="fa-solid fa-award"></i></div>
+                    <div class="cert-pdf-info">
+                        <h3>Juara 1 International Learning Multimedia</h3>
+                        <p>Gayatama Unesa ke-4 (2024)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. OLIVIA IX -->
+            <div class="cert-pdf-card">
+                <div class="cert-pdf-preview">
+                    <embed src="Sertifikat/Sertifikat_Juara 3 OLIVIA IX.pdf" type="application/pdf">
+                </div>
+                <div class="cert-pdf-header">
+                    <div class="cert-pdf-icon"><i class="fa-solid fa-medal"></i></div>
+                    <div class="cert-pdf-info">
+                        <h3>Juara 3 Olimpiade Vokasi Indonesia (OLIVIA) IX</h3>
+                        <p>FPTVI - Technology-Based Innovation (2024)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider PDF Coursera -->
+        <div class="coursera-slider-wrapper">
+            <h3><i class="fa-solid fa-graduation-cap"></i> Dokumen Sertifikat Coursera (PDF)</h3>
+            <div class="slider-container">
+                <div class="slider-pdf-box">
+                    <embed id="courseraPdfEmbed" src="Sertifikat/Sertifikat Advanced MySQL Topics.pdf" type="application/pdf">
+                </div>
+                
+                <div id="courseraTitle" class="slider-title-display">
+                    1. Sertifikat Advanced MySQL Topics
+                </div>
+
+                <div class="slider-btn-group">
+                    <button class="slider-btn" onclick="prevSlide()"><i class="fa-solid fa-arrow-left"></i> Sebelumnya</button>
+                    <span id="sliderIndicator" class="slider-indicator">1 / 14</span>
+                    <button class="slider-btn" onclick="nextSlide()">Selanjutnya <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section id="contact">
+        <div class="contact-box">
+            <h2>Mari Terhubung Bersama Saya!</h2>
+            <p>Saya terbuka untuk kesempatan kerja penuh waktu, magang, maupun kolaborasi proyek teknologi inovatif lainnya.</p>
+            <div class="contact-links">
+                <!-- Email dengan subjek dan isi pesan otomatis -->
+                <a href="mailto:zakariazidancareer@gmail.com?subject=Halo%20Zakaria&body=Halo%20Zakaria,%20saya%20tertarik%20untuk%20berkolaborasi%20dengan%20Anda."><i class="fa-solid fa-envelope"></i> zakariazidancareer@gmail.com</a>
+                
+                <!-- WhatsApp langsung mengirim pesan -->
+                <a href="https://wa.me/6287885007013?text=Halo%20Zakaria,%20saya%20melihat%20portofolio%20Anda%20dan%20tertarik%20untuk%20menghubungi%20Anda." target="_blank"><i class="fa-solid fa-phone"></i> +62 878 8500 7013</a>
+                
+                <!-- LinkedIn langsung ke profil Anda -->
+                <a href="https://www.linkedin.com/in/zakariazidan" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Zakaria Zidan Zamroni.</p>
+    </footer>
+
+    <!-- Script JavaScript -->
+    <script>
+        // Script Slider Proyek Unggulan
+        const projectData = [
+            {
+                title: "1. VR Candi Borobudur",
+                desc: "Proyek Tugas Akhir mengembangkan aplikasi Virtual Reality (VR) Candi Borobudur dengan menambah bagian relief Gandavyuha untuk pelestarian budaya.",
+                img: "Foto/FOTO VR.png",
+                tags: ["Unity", "C#", "VR"]
+            },
+            {
+                title: "2. Sistem POS Toko Dadi Tentrem",
+                desc: "Mengembangkan aplikasi sistem POS berbasis Web PWA secara mandiri untuk mengelola transaksi penjualan, stok barang, dan laporan keuangan.",
+                img: "Foto/FOTO SISTEM POS.png",
+                tags: ["Web PWA", "JavaScript", "Full-Stack"]
+            },
+            {
+                title: "3. Stunting Fighter (Juara 3 OLIVIA IX)",
+                desc: "Mengembangkan game mobile edukatif untuk promosi kesehatan yang meraih Juara 3 Nasional di ajang OLIVIA IX.",
+                img: "Foto/FOTO STUNTING FIGHTER.png",
+                tags: ["Godot", "Mobile Game", "UI/UX"]
+            }
+        ];
+
+        let currentProjectIndex = 0;
+        const projectImg = document.getElementById("projectImg");
+        const projectTitle = document.getElementById("projectTitle");
+        const projectDesc = document.getElementById("projectDesc");
+        const projectTags = document.getElementById("projectTags");
+        const projectIndicator = document.getElementById("projectIndicator");
+
+        function updateProjectSlider() {
+            const proj = projectData[currentProjectIndex];
+            projectImg.src = proj.img;
+            projectTitle.innerText = proj.title;
+            projectDesc.innerText = proj.desc;
+            projectIndicator.innerText = `${currentProjectIndex + 1} / ${projectData.length}`;
+            
+            projectTags.innerHTML = "";
+            proj.tags.forEach(tag => {
+                const span = document.createElement("span");
+                span.className = "tag";
+                span.innerText = tag;
+                projectTags.appendChild(span);
+            });
+        }
+
+        function nextProject() {
+            currentProjectIndex = (currentProjectIndex + 1) % projectData.length;
+            updateProjectSlider();
+        }
+
+        function prevProject() {
+            currentProjectIndex = (currentProjectIndex - 1 + projectData.length) % projectData.length;
+            updateProjectSlider();
+        }
+
+        // Script Slider PDF Coursera
+        
+        const courseraData = [
+            { title: "1. Sertifikat Advanced MySQL Topics", pdf: "Sertifikat/Sertifikat Advanced MySQL Topics.pdf" },
+            { title: "2. Sertifikat Agile with Atlassian Jira", pdf: "Sertifikat/Sertifikat Agile with Atlassian Jira.pdf" },
+            { title: "3. Sertifikat APIs", pdf: "Sertifikat/Sertifikat APIs.pdf" },
+            { title: "4. Sertifikat Capstone-Applying Project Management in the", pdf: "Sertifikat/Sertifikat Capstone-Applying Project Management in the.pdf" },
+            { title: "5. Sertifikat Communication Strategies for a Virtual Age", pdf: "Sertifikat/Sertifikat Communication Strategies for a Virtual Age.pdf" },
+            { title: "6. Sertifikat Database Engineer Capstone", pdf: "Sertifikat/Sertifikat Database Engineer Capstone.pdf" },
+            { title: "7. Sertifikat Generative AI for Project Managers", pdf: "Sertifikat/Sertifikat Generative AI for Project Managers.pdf" },
+            { title: "8. Sertifikat Inheritance and Data Structures in Java", pdf: "Sertifikat/Sertifikat Inheritance and Data Structures in Java.pdf" },
+            { title: "9. Sertifikat Introduction to Communication Science", pdf: "Sertifikat/Sertifikat Introduction to Communication Science.pdf" },
+            { title: "10. Sertifikat Introduction to Data Analystics", pdf: "Sertifikat/Sertifikat Introduction to Data Analystics.pdf" },
+            { title: "11. Sertifikat React Native", pdf: "Sertifikat/Sertifikat React Native.pdf" },
+            { title: "12. Sertifikat Software Defined Networking", pdf: "Sertifikat/Sertifikat Software Defined Networking.pdf" },
+            { title: "13. Sertifikat The Full Stack", pdf: "Sertifikat/Sertifikat The Full Stack.pdf" },
+            { title: "14. Sertifikat Working with Data", pdf: "Sertifikat/Sertifikat Working with Data.pdf" }
+        ];
+
+        let currentIndex = 0;
+        const pdfEmbedElement = document.getElementById("courseraPdfEmbed");
+        const titleElement = document.getElementById("courseraTitle");
+        const indicatorElement = document.getElementById("sliderIndicator");
+
+        function updateSlider() {
+            const currentItem = courseraData[currentIndex];
+            titleElement.innerText = currentItem.title;
+            pdfEmbedElement.src = currentItem.pdf;
+            indicatorElement.innerText = `${currentIndex + 1} / ${courseraData.length}`;
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % courseraData.length;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + courseraData.length) % courseraData.length;
+            updateSlider();
+        }
+    </script>
+</body>
+</html>
